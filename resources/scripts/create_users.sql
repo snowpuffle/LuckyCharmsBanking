@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS Accounts;
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE Users (
+    ID INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    UserName VARCHAR(255) NOT NULL,
+    Type ENUM('CLIENT', 'ADMIN') NOT NULL,
+    Password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Accounts (
+    ID INT PRIMARY KEY, 
+    UserID INT NOT NULL,
+    AccountNumber VARCHAR(255) NOT NULL,
+    Balance INT NOT NULL,
+    Type ENUM('CHECKING', 'SAVINGS') NOT NULL,
+    FOREIGN KEY (UserID)
+        REFERENCES Users (ID)
+);
+
+
+
+
