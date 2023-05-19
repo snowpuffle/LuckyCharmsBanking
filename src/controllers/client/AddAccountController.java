@@ -100,7 +100,7 @@ public class AddAccountController implements Initializable {
 		// Check if the Fields are Empty
 		if (accountType == null || accountType.isBlank()) {
 			success = false;
-			handleMessageLabel("Account Type CANNOT be Empty!", false);
+			handleMessageLabel("Please Select an Account Type!", false);
 		}
 
 		return success;
@@ -115,13 +115,13 @@ public class AddAccountController implements Initializable {
 		try {
 			// Check if the Fields are Empty
 			if (balance.isBlank()) {
-				handleMessageLabel("Balance CANNOT be Empty!", false);
+				handleMessageLabel("Please Enter a Balance!", false);
 			} else {
 				// Convert Balance to Double
 				balanceValue = Double.parseDouble(balance);
 			}
 		} catch (NumberFormatException e) {
-			handleMessageLabel("Invalid Balance!", false);
+			handleMessageLabel("Please Enter a Valid Balance!", false);
 		}
 
 		// Return Balance Value
