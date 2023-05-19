@@ -6,7 +6,7 @@ import java.sql.*;
 public class DBManager {
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/bankingATM?allowMultiQueries=true";
 	private static final String USERNAME = "root";
-	private static final String PASSWORD = "password!";
+	private static final String PASSWORD = "Katie1804!";
 
 	private static DBManager instance;
 	private Connection connection;

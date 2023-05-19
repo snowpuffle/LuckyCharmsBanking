@@ -12,16 +12,9 @@ import models.main.User;
 public class AdminDashboardController implements Initializable {
 	private User admin;
 
-	// Buttons for Client
-	public Button ViewClientsButton;
-	public Button AddClientButton;
-	public Button SearchClientButton;
-
-	// Buttons for Account
-	public Button ViewAccountsButton;
-	public Button AddAccountButton;
-
-	// Utility Buttons
+	// Button Attributes
+	public Button ViewUsersButton;
+	public Button AddUserButton;
 	public Button ChangePasswordButton;
 	public Button LogoutButton;
 
@@ -40,12 +33,26 @@ public class AdminDashboardController implements Initializable {
 	private void addListeners() {
 		LogoutButton.setOnAction(event -> handleLogout());
 		ChangePasswordButton.setOnAction(event -> handleChangePassword());
+		ViewUsersButton.setOnAction(event -> handleViewUsers());
+		AddUserButton.setOnAction(event -> handleAddUser());
 	}
 
 	// Event: "Change Password" Button is Clicked
 	private void handleChangePassword() {
 		closeCurrentWindow();
 		Model.getInstance().getViewFactory().showChangePasswordFrame(admin);
+	}
+
+	// Event: "View All Users" Button is Clicked
+	private void handleViewUsers() {
+		closeCurrentWindow();
+		Model.getInstance().getViewFactory().showViewUsersFrame(admin);
+	}
+
+	// Event "Add New User" Button is Clicked
+	private void handleAddUser() {
+		closeCurrentWindow();
+		Model.getInstance().getViewFactory().showAddNewUserFrame(admin);
 	}
 
 	// Event: "Logout" Button is Clicked

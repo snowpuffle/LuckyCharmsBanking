@@ -1,14 +1,16 @@
 package models.seeds;
 
 import models.main.User;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class UserSeeds {
+	// Main Attributes
 	private List<User> listOfUsers;
 	private static Random random = new Random();
+
+	// Sample Attributes
 	private static String[] FIRST_NAMES = { "Oliver", "Jayden", "Oliver", "Elijah", "Carter", "Joseph", "Jayden",
 			"Samuel", "Daniel", "Carson", "Hannah", "Olivia", "Camila", "Alison", "Sophia", "Amelia", "Evelyn",
 			"Carlie", "Jordan" };
@@ -19,26 +21,46 @@ public class UserSeeds {
 	public UserSeeds() {
 		this.listOfUsers = new ArrayList<User>();
 
-		generateUser("admin");
-		generateUser("client");
+		// Generate Admin and Clients
+		generateAdmin();
+		generateClients(10);
 	}
 
-	// Generate Random Users
-	public void generateUser(String type) {
+	// Generate Random Clients
+	private void generateClients(int numberOfClients) {
+		// Generate X Number of Clients
+		for (int i = 0; i < numberOfClients; i++) {
+			// Generate User Attributes
+			int ID = generateID();
+			String firstName = FIRST_NAMES[random.nextInt(FIRST_NAMES.length)];
+			String lastName = LAST_NAMES[random.nextInt(LAST_NAMES.length)];
+			String username = generateUsername(firstName, lastName);
+			String password = generatePassword();
+
+			// Create a New User Object
+			User client = new User(ID, firstName, lastName, username, password, "CLIENT");
+			this.listOfUsers.add(client);
+		}
+	}
+
+	// Generate Admin
+	private void generateAdmin() {
+		// Generate User Attributes
 		int ID = generateID();
 		String firstName = FIRST_NAMES[random.nextInt(FIRST_NAMES.length)];
 		String lastName = LAST_NAMES[random.nextInt(LAST_NAMES.length)];
-		String username = type;
+		String username = "admin";
 		String password = generatePassword();
 
-		User user = new User(ID, firstName, lastName, username, password, type);
-		this.listOfUsers.add(user);
+		// Create a New User Object
+		User admin = new User(ID, firstName, lastName, username, password, "ADMIN");
+		this.listOfUsers.add(admin);
 	}
 
 	// Generate Random Username
-	// private String generateUsername(String firstName, String lastName) {
-	// return firstName.toLowerCase() + "_" + lastName.toLowerCase();
-	// }
+	private String generateUsername(String firstName, String lastName) {
+		return firstName.toLowerCase() + "_" + lastName.toLowerCase();
+	}
 
 	// Generate Random Password
 	private String generatePassword() {

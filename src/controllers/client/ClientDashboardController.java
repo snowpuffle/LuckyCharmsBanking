@@ -20,7 +20,7 @@ public class ClientDashboardController implements Initializable {
 	private Account checkingAccount;
 	private Account savingsAccount;
 
-	// Button Attributes
+	// Main Button Attributes
 	public Button AddAccountButton;
 	public Button ChangePasswordButton;
 	public Button DepositWithdrawButton;

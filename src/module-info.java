@@ -8,4 +8,5 @@ module LuckyCharmsBanking {
 	opens controllers to javafx.graphics, javafx.fxml;
 	opens controllers.admin to javafx.graphics, javafx.fxml;
 	opens controllers.client to javafx.graphics, javafx.fxml;
+	opens models.main to javafx.graphics, javafx.fxml, javafx.base;
 }

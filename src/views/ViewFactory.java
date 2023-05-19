@@ -62,6 +62,22 @@ public class ViewFactory {
 		createStage(fxmlLoader, "Change Password");
 	}
 
+	// Show View All Users Window
+	public void showViewUsersFrame(User admin) {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/admin/ViewUsers.fxml"));
+		ViewUsersController ViewUsersController = new ViewUsersController(admin);
+		fxmlLoader.setController(ViewUsersController);
+		createStage(fxmlLoader, "View Users");
+	}
+
+	// Show Add New Users Window
+	public void showAddNewUserFrame(User admin) {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/admin/AddUser.fxml"));
+		AddUserController AddUserController = new AddUserController(admin);
+		fxmlLoader.setController(AddUserController);
+		createStage(fxmlLoader, "Add New User");
+	}
+
 	// Generic: Create Stage
 	private void createStage(FXMLLoader fxmlLoader, String stageTitle) {
 		Scene scene = null;

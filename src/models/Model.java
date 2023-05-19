@@ -109,6 +109,11 @@ public class Model {
 		}
 	}
 
+	// Add New User
+	public boolean addNewUser(User user) {
+		return userDAO.addUser(user);
+	}
+
 	// Add New Account
 	public boolean addNewAccount(User user, String type) throws SQLException {
 		// Generate a Unique ID for the New Animal

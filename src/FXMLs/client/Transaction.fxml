@@ -18,17 +18,17 @@
 			<children>
 				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="dark-green-background">
 					<children>
-						<ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+						<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
 							<HBox.margin>
-								<Insets right="5.0" />
+								<Insets right="15.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../../resources/images/clover.png" />
+								<Image url="@../../../resources/images/coins.png" />
 							</image>
 						</ImageView>
 						<Label styleClass="header-label" text="Deposit / Withdraw">
 							<HBox.margin>
-								<Insets left="5.0" />
+								<Insets />
 							</HBox.margin>
 						</Label>
 					</children>

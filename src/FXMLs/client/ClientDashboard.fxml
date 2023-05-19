@@ -17,12 +17,19 @@
 			<children>
 				<AnchorPane prefHeight="100.0" styleClass="dark-green-background">
 					<children>
-						<ImageView fitHeight="40.0" fitWidth="40.0" layoutX="21.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-							<image>
-								<Image url="@../../../resources/images/user.png" />
-							</image>
-						</ImageView>
-						<Label layoutX="69.0" layoutY="17.0" styleClass="header-label" text="Client Dashboard" />
+                  <HBox alignment="CENTER" layoutX="25.0" layoutY="17.0">
+                     <children>
+      						<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+      							<image>
+      								<Image url="@../../../resources/images/gold-pot.png" />
+      							</image>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+      						</ImageView>
+      						<Label styleClass="header-label" text="Client Dashboard" />
+                     </children>
+                  </HBox>
 						<Button fx:id="LogoutButton" layoutX="623.0" layoutY="26.0" mnemonicParsing="false" prefWidth="150.0" styleClass="gold-background" text="Logout">
 							<graphic>
 								<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
@@ -36,24 +43,8 @@
 				</AnchorPane>
 				<HBox prefHeight="400.0" styleClass="grey-background">
 					<children>
-						<VBox prefHeight="200.0" prefWidth="400.0" styleClass="grey-background">
+						<VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" styleClass="grey-background">
 							<children>
-								<HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
-									<children>
-										<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-											<image>
-												<Image url="@../../../resources/images/money.png" />
-											</image>
-											<HBox.margin>
-												<Insets right="10.0" />
-											</HBox.margin>
-										</ImageView>
-										<Label styleClass="title-label" text="My Accounts" />
-									</children>
-									<padding>
-										<Insets left="10.0" />
-									</padding>
-								</HBox>
 								<AnchorPane fx:id="CheckingAccountTile" prefHeight="150.0" prefWidth="200.0">
 									<VBox.margin>
 										<Insets top="10.0" />
@@ -111,24 +102,8 @@
 								<Insets right="15.0" />
 							</HBox.margin>
 						</VBox>
-						<VBox layoutX="10.0" layoutY="10.0" prefWidth="400.0" styleClass="grey-background">
+						<VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefWidth="400.0" styleClass="grey-background">
 							<children>
-								<HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
-									<children>
-										<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-											<HBox.margin>
-												<Insets right="10.0" />
-											</HBox.margin>
-											<image>
-												<Image url="@../../../resources/images/gold-pot.png" />
-											</image>
-										</ImageView>
-										<Label styleClass="title-label" text="User Actions" />
-									</children>
-									<padding>
-										<Insets left="10.0" />
-									</padding>
-								</HBox>
 								<VBox alignment="CENTER" prefHeight="315.0">
 									<children>
 										<HBox alignment="CENTER" prefHeight="80.0">
