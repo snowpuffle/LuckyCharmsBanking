@@ -39,6 +39,13 @@ public class AdminDashboardController implements Initializable {
 	// Initialize OnClick Actions for All Buttons
 	private void addListeners() {
 		LogoutButton.setOnAction(event -> handleLogout());
+		ChangePasswordButton.setOnAction(event -> handleChangePassword());
+	}
+
+	// Event: "Change Password" Button is Clicked
+	private void handleChangePassword() {
+		closeCurrentWindow();
+		Model.getInstance().getViewFactory().showChangePasswordFrame(admin);
 	}
 
 	// Event: "Logout" Button is Clicked

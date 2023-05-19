@@ -68,7 +68,7 @@ public class PasswordController implements Initializable {
 		if (validateFields(oldPassword, newPassword)) {
 			changePassword(oldPassword, newPassword);
 		} else {
-			handleMessageLabel("Fields CANNOT be Empty!", false);
+			handleMessageLabel("Please Fill in All Fields!", false);
 		}
 	}
 
