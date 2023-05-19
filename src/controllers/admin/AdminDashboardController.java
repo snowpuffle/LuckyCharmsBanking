@@ -10,6 +10,7 @@ import models.Model;
 import models.main.User;
 
 public class AdminDashboardController implements Initializable {
+	// Main Attributes
 	private User admin;
 
 	// Button Attributes
@@ -67,5 +68,4 @@ public class AdminDashboardController implements Initializable {
 		Stage stage = (Stage) LogoutButton.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
 	}
-
 }

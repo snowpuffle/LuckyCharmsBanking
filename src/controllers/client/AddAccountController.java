@@ -15,9 +15,10 @@ import models.Model;
 import models.main.*;
 
 public class AddAccountController implements Initializable {
+	// Main Attributes
 	private User client;
 
-	// New Account Fields
+	// New Account Attributes
 	public ComboBox<String> AccountTypeField;
 	public TextField BalanceField;
 
@@ -144,5 +145,4 @@ public class AddAccountController implements Initializable {
 		Stage stage = (Stage) SubmitButton.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
 	}
-
 }

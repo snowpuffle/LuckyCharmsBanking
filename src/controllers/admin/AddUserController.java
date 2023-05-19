@@ -1,22 +1,22 @@
 package controllers.admin;
 
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
+import javafx.scene.paint.Color;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import models.Model;
-import models.main.User;
-import javafx.scene.control.PasswordField;
+import models.main.*;
 
 public class AddUserController implements Initializable {
+	// Main Attributes
 	private User admin;
 
 	// User Attributes
@@ -137,5 +137,4 @@ public class AddUserController implements Initializable {
 		Stage stage = (Stage) SubmitButton.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
 	}
-
 }

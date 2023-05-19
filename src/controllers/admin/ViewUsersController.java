@@ -17,16 +17,19 @@ import models.Model;
 import models.main.*;
 
 public class ViewUsersController implements Initializable {
+	// Main Attributes
 	private User admin;
 	private List<User> listOfUsers;
 
-	// Attributes for Table of Users
+	// Table Attributes
 	public TableView<User> TableOfUsers;
 	public TableColumn<User, Integer> ColumnID;
 	public TableColumn<User, String> ColumnFirstName;
 	public TableColumn<User, String> ColumnLastName;
 	public TableColumn<User, String> ColumnType;
 	public TableColumn<User, String> ColumnUsername;
+
+	// Utility Attributes
 	public Button GoBackButton;
 
 	// Default Class Constructor
@@ -38,9 +41,17 @@ public class ViewUsersController implements Initializable {
 	@Override
 	// Initialize Method
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		// Initialize Frame
+		initializeFrame();
+
+		// Initialize OnClick Action of Buttons
+		GoBackButton.setOnAction(event -> handleGoBack());
+	}
+
+	// Initialize Frame Attributes
+	private void initializeFrame() {
 		initializeTableColumns();
 		displayUserData();
-		GoBackButton.setOnAction(event -> handleGoBack());
 	}
 
 	// Event: "Go Back" Button is Clicked

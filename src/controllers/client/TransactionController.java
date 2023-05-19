@@ -15,6 +15,7 @@ import models.Model;
 import models.main.*;
 
 public class TransactionController implements Initializable {
+	// Main Attributes
 	private User client;
 	private List<Account> listOfAccounts;
 
@@ -217,5 +218,4 @@ public class TransactionController implements Initializable {
 		Stage stage = (Stage) SubmitButton.getScene().getWindow();
 		Model.getInstance().getViewFactory().closeStage(stage);
 	}
-
 }
