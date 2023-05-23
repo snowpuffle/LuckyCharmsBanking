@@ -23,7 +23,7 @@
 								<Insets right="15.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../../resources/images/saving-money.png" />
+								<Image url="@../../../resources/images/icons/new-page.png" />
 							</image>
 						</ImageView>
 						<Label styleClass="header-label" text="Add New Account">
@@ -52,7 +52,7 @@
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../resources/images/piggy-bank.png" />
+                                    <Image url="@../../../resources/images/icons/info.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="15.0" />
@@ -84,7 +84,7 @@
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../resources/images/balance.png" />
+                                    <Image url="@../../../resources/images/icons/balance.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="15.0" />
@@ -118,7 +118,7 @@
 											<graphic>
 												<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
 													<image>
-														<Image url="@../../../resources/images/return.png" />
+														<Image url="@../../../resources/images/icons/return.png" />
 													</image>
 												</ImageView>
 											</graphic>
@@ -134,7 +134,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
                            <image>
-                              <Image url="@../../../resources/images/check-mark.png" />
+                              <Image url="@../../../resources/images/icons/check-mark.png" />
                            </image>
                         </ImageView>
                      </graphic>

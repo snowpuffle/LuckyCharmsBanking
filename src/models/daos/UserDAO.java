@@ -13,10 +13,11 @@ public class UserDAO {
 	private final Connection connection;
 
 	// SQL Queries
-	private static final String GET_ALL_USERS = "SELECT * FROM users";
-	private static final String GET_BY_USERNAME_PASSWORD = "SELECT * FROM users WHERE username = ? AND password = ?";
-	private static final String ADD_USER = "INSERT INTO users (id, firstName, lastName, username, password, type) VALUES (?, ?, ?, ?, ?, ?)";
-	private static final String UPDATE_PASSWORD = "UPDATE users SET password = ? WHERE id = ?";
+	private static final String GET_ALL_USERS = "SELECT * FROM Users";
+	private static final String GET_BY_USERNAME_PASSWORD = "SELECT * FROM Users WHERE username = ? AND password = ?";
+	private static final String ADD_USER = "INSERT INTO Users (ID, FirstName, LastName, Username, Password, Gender, ImageURL, Type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	private static final String UPDATE_USER = "UPDATE Users SET Username = ?, ImageURL = ? WHERE ID = ?";
+	private static final String UPDATE_PASSWORD = "UPDATE Users SET password = ? WHERE ID = ?";
 
 	// Default Class Constructor
 	public UserDAO(Connection connection) {
@@ -72,8 +73,10 @@ public class UserDAO {
 				int ID = resultSet.getInt("ID");
 				String firstName = resultSet.getString("FirstName");
 				String lastName = resultSet.getString("LastName");
+				String gender = resultSet.getString("Gender");
 				String type = resultSet.getString("Type");
-				user = new User(ID, firstName, lastName, username, password, type);
+				String imageURL = resultSet.getString("ImageURL");
+				user = new User(ID, firstName, lastName, username, password, gender, imageURL, type);
 			} else {
 				return null;
 			}
@@ -97,9 +100,11 @@ public class UserDAO {
 			String lastName = results.getString("LastName");
 			String username = results.getString("UserName");
 			String password = results.getString("Password");
+			String gender = results.getString("Gender");
 			String type = results.getString("Type");
+			String imageURL = results.getString("ImageURL");
 
-			user = new User(id, firstName, lastName, username, password, type);
+			user = new User(id, firstName, lastName, username, password, gender, imageURL, type);
 
 		} catch (SQLException e) {
 			System.out.println("ERROR USERDAO: Cannot Extract User Attributes from ResultSet! " + e);
@@ -126,7 +131,9 @@ public class UserDAO {
 			statement.setString(3, user.getLastName());
 			statement.setString(4, user.getUsername());
 			statement.setString(5, user.getPassword());
-			statement.setString(6, user.getType());
+			statement.setString(6, user.getGender());
+			statement.setString(7, user.getImageURL());
+			statement.setString(8, user.getType());
 
 			// Execute Statement
 			statement.executeUpdate();
@@ -134,6 +141,34 @@ public class UserDAO {
 		} catch (SQLException e) {
 			success = false;
 			System.out.println("ERROR USERDAO: Cannot Add User! " + e);
+		}
+
+		// Return Flag
+		return success;
+	}
+
+	// Update Existing User from Database
+	public boolean updateUser(User user) {
+		// Initialize Flag
+		boolean success = true;
+
+		// Initialize SQL Component
+		PreparedStatement statement = null;
+
+		// Attempt to Add User to Database
+		try {
+			// Prepare Statement and Set Values
+			statement = connection.prepareStatement(UPDATE_USER);
+			statement.setString(1, user.getUsername());
+			statement.setString(2, user.getImageURL());
+			statement.setInt(3, user.getID());
+
+			// Execute Statement
+			statement.executeUpdate();
+
+		} catch (SQLException e) {
+			success = false;
+			System.out.println("ERROR USERDAO: Cannot Update User! " + e);
 		}
 
 		// Return Flag

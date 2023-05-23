@@ -38,20 +38,44 @@ public class ViewFactory {
 		createStage(fxmlLoader, "Client Dashboard");
 	}
 
-	// Show Add Client Account Window
+	// Show Manage Accounts Window
+	public void showManageAccountsFrame(User client) {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/client/ManageAccounts.fxml"));
+		AccountController AccountController = new AccountController(client);
+		fxmlLoader.setController(AccountController);
+		createStage(fxmlLoader, "Manage Accounts");
+	}
+
+	// Show Add Client Window
 	public void showAddClientAccountFrame(User user) {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/client/AddAccount.fxml"));
 		AddAccountController AddAccountController = new AddAccountController(user);
 		fxmlLoader.setController(AddAccountController);
-		createStage(fxmlLoader, "Add New Client Account");
+		createStage(fxmlLoader, "Add New Client");
 	}
 
-	// Show User Change Password Window
-	public void showTransactionFrame(User user) {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/client/Transaction.fxml"));
-		TransactionController TransactionController = new TransactionController(user);
-		fxmlLoader.setController(TransactionController);
-		createStage(fxmlLoader, "Transaction Frame");
+	// Show Edit Client Window
+	public void showEditClientAccountFrame(User user) {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/client/EditClient.fxml"));
+		EditClientController EditClientController = new EditClientController(user);
+		fxmlLoader.setController(EditClientController);
+		createStage(fxmlLoader, "Edit Client");
+	}
+
+	// Show Deposit/Withdraw Window
+	public void showDepositWithdrawFrame(User user) {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/client/DepositWithdraw.fxml"));
+		DepositWithdrawController DepositWithdrawController = new DepositWithdrawController(user);
+		fxmlLoader.setController(DepositWithdrawController);
+		createStage(fxmlLoader, "Deposit/Withdraw Frame");
+	}
+
+	// Show Deposit/Withdraw Window
+	public void showSendTransferFrame(User user) {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLs/client/SendTransfer.fxml"));
+		SendTransferController SendTransferController = new SendTransferController(user);
+		fxmlLoader.setController(SendTransferController);
+		createStage(fxmlLoader, "Send/Transfer Frame");
 	}
 
 	// Show User Change Password Window

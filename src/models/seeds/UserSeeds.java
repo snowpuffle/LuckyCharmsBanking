@@ -10,12 +10,19 @@ public class UserSeeds {
 	private List<User> listOfUsers;
 	private static Random random = new Random();
 
-	// Sample Attributes
-	private static String[] FIRST_NAMES = { "Oliver", "Jayden", "Oliver", "Elijah", "Carter", "Joseph", "Jayden",
-			"Samuel", "Daniel", "Carson", "Hannah", "Olivia", "Camila", "Alison", "Sophia", "Amelia", "Evelyn",
-			"Carlie", "Jordan" };
+	// User Attributes
+	private static String[] GENDERS = { "Female", "Male" };
+	private static String[] FEMALE_NAMES = { "Emma", "Olivia", "Ava", "Sophia", "Mia", "Isabella", "Charlotte",
+			"Amelia", "Harper", "Evelyn" };
+	private static String[] MALE_NAMES = { "Liam", "Noah", "William", "James", "Oliver", "Benjamin", "Elijah", "Lucas",
+			"Henry", "Alexander" };
+
 	private static String[] LAST_NAMES = { "Walker", "Martin", "Walker", "Wilson", "Miller", "Howard", "Taylor",
 			"Watson", "Morgan", "Turner", "Wright", "Morris", "Butler", "Barnes", "Powell", "Gibson", "Holmes" };
+
+	private static String[] FEMALE_IMAGES = { "woman-1.png", "woman-2.png", "woman-3.png", "woman-4.png",
+			"woman-5.png" };
+	private static String[] MALE_IMAGES = { "man-1.png", "man-2.png", "man-3.png", "man-4.png", "man-5.png" };
 
 	// Default Class Constructor
 	public UserSeeds() {
@@ -23,7 +30,7 @@ public class UserSeeds {
 
 		// Generate Admin and Clients
 		generateAdmin();
-		generateClients(10);
+		generateClients(3);
 	}
 
 	// Generate Random Clients
@@ -32,13 +39,15 @@ public class UserSeeds {
 		for (int i = 0; i < numberOfClients; i++) {
 			// Generate User Attributes
 			int ID = generateID();
-			String firstName = FIRST_NAMES[random.nextInt(FIRST_NAMES.length)];
+			String gender = GENDERS[random.nextInt(GENDERS.length)];
+			String firstName = genderateFirstName(gender);
 			String lastName = LAST_NAMES[random.nextInt(LAST_NAMES.length)];
 			String username = generateUsername(firstName, lastName);
 			String password = generatePassword();
+			String imageURL = generateImageURL(gender);
 
 			// Create a New User Object
-			User client = new User(ID, firstName, lastName, username, password, "CLIENT");
+			User client = new User(ID, firstName, lastName, username, password, gender, imageURL, "CLIENT");
 			this.listOfUsers.add(client);
 		}
 	}
@@ -47,13 +56,15 @@ public class UserSeeds {
 	private void generateAdmin() {
 		// Generate User Attributes
 		int ID = generateID();
-		String firstName = FIRST_NAMES[random.nextInt(FIRST_NAMES.length)];
+		String gender = GENDERS[random.nextInt(GENDERS.length)];
+		String firstName = genderateFirstName(gender);
 		String lastName = LAST_NAMES[random.nextInt(LAST_NAMES.length)];
 		String username = "admin";
 		String password = generatePassword();
+		String imageURL = generateImageURL(gender);
 
 		// Create a New User Object
-		User admin = new User(ID, firstName, lastName, username, password, "ADMIN");
+		User admin = new User(ID, firstName, lastName, username, password, gender, imageURL, "ADMIN");
 		this.listOfUsers.add(admin);
 	}
 
@@ -73,6 +84,26 @@ public class UserSeeds {
 		int maxID = 99999;
 
 		return random.nextInt(maxID - minID + 1) + minID;
+	}
+
+	// Generate First Name Based on Gender
+	private String genderateFirstName(String gender) {
+		if ("MALE".equalsIgnoreCase(gender)) {
+			return MALE_NAMES[random.nextInt(MALE_NAMES.length)];
+		} else if ("FEMALE".equalsIgnoreCase(gender)) {
+			return FEMALE_NAMES[random.nextInt(FEMALE_NAMES.length)];
+		}
+		return "Error";
+	}
+
+	// Generate ImageURL based on Type and Name
+	public String generateImageURL(String gender) {
+		if ("MALE".equalsIgnoreCase(gender)) {
+			return MALE_IMAGES[random.nextInt(MALE_IMAGES.length)];
+		} else if ("FEMALE".equalsIgnoreCase(gender)) {
+			return FEMALE_IMAGES[random.nextInt(FEMALE_IMAGES.length)];
+		}
+		return "unknown.png";
 	}
 
 	// Get List of Users

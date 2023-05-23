@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import models.Model;
 import models.main.*;
 
-public class TransactionController implements Initializable {
+public class DepositWithdrawController implements Initializable {
 	// Main Attributes
 	private User client;
 	private List<Account> listOfAccounts;
@@ -31,7 +31,7 @@ public class TransactionController implements Initializable {
 	public Button SubmitButton;
 
 	// Default Class Constructor
-	public TransactionController(User client) {
+	public DepositWithdrawController(User client) {
 		this.client = client;
 		listOfAccounts = Model.getInstance().getAllAccountsByUser(client);
 	}
@@ -44,7 +44,7 @@ public class TransactionController implements Initializable {
 
 		// Initialize OnClick Action of Buttons
 		GoBackButton.setOnAction(event -> handleGoBack());
-		SubmitButton.setOnAction(event -> handleTransaction());
+		SubmitButton.setOnAction(event -> handleSubmit());
 	}
 
 	// Initialize Frame Attributes
@@ -64,12 +64,12 @@ public class TransactionController implements Initializable {
 	private void handleGoBack() {
 		if (client != null) {
 			closeCurrentWindow();
-			Model.getInstance().getViewFactory().showClientDashboardFrame(client);
+			Model.getInstance().getViewFactory().showManageAccountsFrame(client);
 		}
 	}
 
 	// Event: "Submit" Button is Clicked
-	private void handleTransaction() {
+	private void handleSubmit() {
 		// Retrieve Field Values
 		String transactionType = TransactionTypeField.getValue();
 		String accountNumber = AccountField.getValue();
@@ -180,6 +180,12 @@ public class TransactionController implements Initializable {
 			} else {
 				// Convert Balance to Double
 				amountValue = Double.parseDouble(amount);
+
+				// Check if Amount is Under $5,000
+				if (amountValue > 5000) {
+					handleMessageLabel("Amount Must Be Under $5000!", false);
+					amountValue = -1; // Reset amountValue to Indicate an Invalid Amount
+				}
 			}
 		} catch (NumberFormatException e) {
 			handleMessageLabel("Please Enter a Valid Amount!", false);

@@ -24,7 +24,7 @@
 								<Insets right="15.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../../resources/images/hat.png" />
+								<Image url="@../../../resources/images/icons/add-user.png" />
 							</image>
 						</ImageView>
 						<Label styleClass="header-label" text="Add New User">
@@ -46,17 +46,17 @@
 						</Label>
 					</children>
 				</HBox>
-				<VBox prefHeight="230.0">
+				<VBox alignment="CENTER" prefHeight="230.0">
 					<children>
-						<HBox alignment="CENTER" prefHeight="115.0" prefWidth="200.0" styleClass="grey-background">
+						<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="grey-background">
 							<children>
-								<VBox alignment="CENTER" prefWidth="315.0">
+								<VBox alignment="CENTER" prefWidth="300.0">
 									<children>
 										<HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="65.0" prefHeight="40.0" prefWidth="200.0">
 											<children>
 												<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
 													<image>
-														<Image url="@../../../resources/images/id-card.png" />
+														<Image url="@../../../resources/images/icons/info.png" />
 													</image>
 													<HBox.margin>
 														<Insets right="15.0" />
@@ -70,7 +70,7 @@
 										</HBox>
 										<HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="60.0" prefWidth="200.0">
 											<children>
-												<TextField fx:id="FirstNameField" prefHeight="45.0" prefWidth="250.0" styleClass="gold-background">
+												<TextField fx:id="FirstNameField" prefHeight="45.0" prefWidth="220.0" styleClass="gold-background">
 													<HBox.margin>
 														<Insets />
 													</HBox.margin>
@@ -79,16 +79,16 @@
 										</HBox>
 									</children>
 									<padding>
-										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+										<Insets bottom="5.0" top="5.0" />
 									</padding>
 								</VBox>
-								<VBox alignment="CENTER" prefWidth="315.0">
+								<VBox alignment="CENTER" prefWidth="300.0">
 									<children>
 										<HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
 											<children>
 												<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
 													<image>
-														<Image url="@../../../resources/images/id-card.png" />
+														<Image url="@../../../resources/images/icons/info.png" />
 													</image>
 													<HBox.margin>
 														<Insets right="15.0" />
@@ -102,25 +102,88 @@
 										</HBox>
 										<HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
                                  <children>
-                                    <TextField fx:id="LastNameField" prefHeight="45.0" prefWidth="250.0" styleClass="gold-background" />
+                                    <TextField fx:id="LastNameField" prefHeight="45.0" prefWidth="220.0" styleClass="gold-background" />
                                  </children>
 										</HBox>
 									</children>
 									<padding>
-										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+										<Insets bottom="5.0" top="5.0" />
 									</padding>
 								</VBox>
+                        <VBox alignment="CENTER" layoutX="385.0" layoutY="10.0" prefWidth="300.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icons/id-card.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="15.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label styleClass="title-label" text="ImageURL:" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="ImageField" prefHeight="45.0" prefWidth="220.0" styleClass="gold-background" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
 							</children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
 						</HBox>
-						<HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="115.0" prefWidth="200.0" styleClass="grey-background">
+						<HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="grey-background">
 							<children>
-								<VBox alignment="CENTER" prefWidth="315.0">
+                        <VBox alignment="CENTER" layoutX="85.0" layoutY="10.0" prefWidth="300.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icons/user.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="15.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label styleClass="title-label" text="Gender:" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                                 <children>
+                                    <ComboBox fx:id="GenderField" prefHeight="45.0" prefWidth="220.0" styleClass="gold-background">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+								<VBox alignment="CENTER" prefWidth="300.0">
 									<children>
 										<HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
 											<children>
 												<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
 													<image>
-														<Image url="@../../../resources/images/info.png" />
+														<Image url="@../../../resources/images/icons/user.png" />
 													</image>
 													<HBox.margin>
 														<Insets right="15.0" />
@@ -134,7 +197,7 @@
 										</HBox>
 										<HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
 											<children>
-												<ComboBox fx:id="UserTypeField" prefHeight="45.0" prefWidth="250.0" styleClass="gold-background">
+												<ComboBox fx:id="UserTypeField" prefHeight="45.0" prefWidth="220.0" styleClass="gold-background">
 													<HBox.margin>
 														<Insets />
 													</HBox.margin>
@@ -143,16 +206,16 @@
 										</HBox>
 									</children>
 									<padding>
-										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+										<Insets bottom="5.0" top="5.0" />
 									</padding>
 								</VBox>
-								<VBox alignment="CENTER" prefWidth="315.0">
+								<VBox alignment="CENTER" prefWidth="300.0">
 									<children>
 										<HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="65.0" prefHeight="40.0" prefWidth="200.0">
 											<children>
 												<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
 													<image>
-														<Image url="@../../../resources/images/padlock.png" />
+														<Image url="@../../../resources/images/icons/padlock.png" />
 													</image>
 													<HBox.margin>
 														<Insets right="15.0" />
@@ -166,15 +229,18 @@
 										</HBox>
 										<HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="60.0" prefWidth="200.0">
                                  <children>
-                                    <PasswordField fx:id="PasswordField" prefHeight="45.0" prefWidth="250.0" styleClass="gold-background" />
+                                    <PasswordField fx:id="PasswordField" prefHeight="45.0" prefWidth="220.0" styleClass="gold-background" />
                                  </children>
 										</HBox>
 									</children>
 									<padding>
-										<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+										<Insets bottom="5.0" top="5.0" />
 									</padding>
 								</VBox>
 							</children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
 						</HBox>
 					</children>
 				</VBox>
@@ -184,7 +250,7 @@
 							<graphic>
 								<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
 									<image>
-										<Image url="@../../../resources/images/return.png" />
+										<Image url="@../../../resources/images/icons/return.png" />
 									</image>
 								</ImageView>
 							</graphic>
@@ -200,7 +266,7 @@
 							<graphic>
 								<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
 									<image>
-										<Image url="@../../../resources/images/check-mark.png" />
+										<Image url="@../../../resources/images/icons/check-mark.png" />
 									</image>
 								</ImageView>
 							</graphic>

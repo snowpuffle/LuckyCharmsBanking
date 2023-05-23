@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@../../../resources/stylesheets/main.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<VBox prefHeight="500.0" prefWidth="800.0">
+			<children>
+				<AnchorPane prefHeight="100.0" styleClass="dark-green-background">
+					<children>
+						<HBox alignment="CENTER" layoutX="25.0" layoutY="17.0">
+							<children>
+								<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../../../resources/images/icons/gold-pot.png" />
+									</image>
+									<HBox.margin>
+										<Insets right="15.0" />
+									</HBox.margin>
+								</ImageView>
+								<Label styleClass="header-label" text="Manage My Accounts" />
+							</children>
+						</HBox>
+						<Button fx:id="GoBackButton" layoutX="568.0" layoutY="26.0" mnemonicParsing="false" prefWidth="210.0" styleClass="gold-background" text="Back to Dashboard">
+							<graphic>
+								<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+									<image>
+										<Image url="@../../../resources/images/icons/return.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Button>
+					</children>
+				</AnchorPane>
+				<HBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0" styleClass="grey-background">
+					<children>
+						<VBox alignment="CENTER" prefWidth="335.0" styleClass="grey-background">
+							<children>
+								<AnchorPane fx:id="CheckingAccountTile" prefHeight="150.0">
+									<VBox.margin>
+										<Insets />
+									</VBox.margin>
+									<children>
+										<Label fx:id="CheckingTypeLabel" layoutX="14.0" layoutY="14.0" text="Checking Account">
+											<font>
+												<Font name="Pangolin Regular" size="18.0" />
+											</font>
+										</Label>
+										<Label fx:id="CheckingBalanceField" layoutX="14.0" layoutY="54.0" text="\$10,000.00">
+											<font>
+												<Font name="Pangolin Regular" size="30.0" />
+											</font>
+										</Label>
+										<Label fx:id="CheckingNumberField" alignment="CENTER_RIGHT" layoutX="121.0" layoutY="110.0" prefWidth="200.0" text="8999 4599 5146 4557">
+											<font>
+												<Font name="Pangolin Regular" size="18.0" />
+											</font>
+											<padding>
+												<Insets right="5.0" />
+											</padding>
+										</Label>
+									</children>
+									<styleClass>
+										<String fx:value="card" />
+										<String fx:value="gold-background" />
+									</styleClass>
+								</AnchorPane>
+								<AnchorPane fx:id="SavingsAccountTile" layoutX="30.0" layoutY="90.0" prefHeight="150.0" prefWidth="300.0">
+									<children>
+										<Label fx:id="SavingsTypeLabel" layoutX="14.0" layoutY="14.0" text="Savings Account">
+											<font>
+												<Font name="Pangolin Regular" size="18.0" />
+											</font>
+										</Label>
+										<Label fx:id="SavingsBalanceField" layoutX="14.0" layoutY="54.0" text="\$25,000.00">
+											<font>
+												<Font name="Pangolin Regular" size="30.0" />
+											</font>
+										</Label>
+										<Label fx:id="SavingsNumberField" alignment="CENTER_RIGHT" layoutX="121.0" layoutY="110.0" prefWidth="200.0" text="8999 4599 5146 4557">
+											<font>
+												<Font name="Pangolin Regular" size="18.0" />
+											</font>
+											<padding>
+												<Insets right="5.0" />
+											</padding>
+										</Label>
+									</children>
+									<styleClass>
+										<String fx:value="card" />
+										<String fx:value="gold-background" />
+									</styleClass>
+									<VBox.margin>
+										<Insets top="15.0" />
+									</VBox.margin>
+								</AnchorPane>
+							</children>
+							<HBox.margin>
+								<Insets right="10.0" />
+							</HBox.margin>
+						</VBox>
+						<VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefWidth="300.0" styleClass="grey-background">
+							<children>
+								<HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
+									<children>
+										<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../../../resources/images/icons/piggy-bank.png" />
+											</image>
+											<HBox.margin>
+												<Insets right="10.0" />
+											</HBox.margin>
+										</ImageView>
+										<Label styleClass="title-label" text="Account Actions" />
+									</children>
+									<VBox.margin>
+										<Insets bottom="5.0" />
+									</VBox.margin>
+								</HBox>
+								<VBox alignment="CENTER" prefHeight="275.0">
+									<children>
+										<HBox alignment="CENTER" prefHeight="80.0">
+											<children>
+												<Button fx:id="DepositWithdrawButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="220.0" styleClass="gold-background" text="Deposit / Withdraw">
+													<graphic>
+														<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+															<image>
+																<Image url="@../../../resources/images/icons/balance.png" />
+															</image>
+														</ImageView>
+													</graphic>
+												</Button>
+											</children>
+										</HBox>
+										<HBox alignment="CENTER" prefHeight="80.0">
+											<children>
+												<Button fx:id="SendTransferButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="220.0" styleClass="gold-background" text="Send / Transfer">
+													<graphic>
+														<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+															<image>
+																<Image url="@../../../resources/images/icons/transaction.png" />
+															</image>
+														</ImageView>
+													</graphic>
+												</Button>
+											</children>
+										</HBox>
+										<HBox alignment="CENTER" prefHeight="80.0">
+											<children>
+												<Button fx:id="AddAccountButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="220.0" styleClass="gold-background" text="Add New Account">
+													<graphic>
+														<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+															<image>
+																<Image url="@../../../resources/images/icons/new-page.png" />
+															</image>
+														</ImageView>
+													</graphic>
+												</Button>
+											</children>
+										</HBox>
+									</children>
+									<styleClass>
+										<String fx:value="rounded-border" />
+										<String fx:value="light-green-background" />
+										<String fx:value="black-border" />
+									</styleClass>
+									<VBox.margin>
+										<Insets />
+									</VBox.margin>
+								</VBox>
+							</children>
+							<HBox.margin>
+								<Insets left="10.0" />
+							</HBox.margin>
+						</VBox>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</children>
+</AnchorPane>

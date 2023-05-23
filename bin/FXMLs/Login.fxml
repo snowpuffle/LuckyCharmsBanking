@@ -16,14 +16,14 @@
 	<children>
 		<VBox prefHeight="500.0" prefWidth="750.0">
 			<children>
-				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="light-green-background">
+				<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="dark-green-background">
 					<children>
 						<ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
 							<HBox.margin>
 								<Insets right="5.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../resources/images/clover.png" />
+								<Image url="@../../resources/images/icons/clover.png" />
 							</image>
 						</ImageView>
 						<Label styleClass="header-label" text="Lucky Charms Banking">
@@ -43,7 +43,7 @@
 								<Insets right="10.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../resources/images/coins.png" />
+								<Image url="@../../resources/images/icons/coins.png" />
 							</image>
 						</ImageView>
 						<VBox alignment="CENTER" prefHeight="215.0" prefWidth="315.0">
@@ -57,7 +57,7 @@
 									<children>
 										<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
 											<image>
-												<Image url="@../../resources/images/user.png" />
+												<Image url="@../../resources/images/icons/user.png" />
 											</image>
 										</ImageView>
 										<TextField fx:id="usernameField" prefHeight="45.0" prefWidth="215.0" promptText="Username">
@@ -75,7 +75,7 @@
 									<children>
 										<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
 											<image>
-												<Image url="@../../resources/images/padlock.png" />
+												<Image url="@../../resources/images/icons/padlock.png" />
 											</image>
 										</ImageView>
 										<PasswordField fx:id="passwordField" prefHeight="45.0" prefWidth="215.0" promptText="Password">
@@ -95,7 +95,7 @@
 											<graphic>
 												<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
 													<image>
-														<Image url="@../../resources/images/check-mark.png" />
+														<Image url="@../../resources/images/icons/check-mark.png" />
 													</image>
 												</ImageView>
 											</graphic>
@@ -106,7 +106,7 @@
 										</Button>
 									</children>
 									<VBox.margin>
-										<Insets top="10.0" />
+										<Insets top="20.0" />
 									</VBox.margin>
 								</HBox>
 							</children>

@@ -23,7 +23,7 @@
 								<Insets right="15.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../../resources/images/coins.png" />
+								<Image url="@../../../resources/images/icons/coins.png" />
 							</image>
 						</ImageView>
 						<Label styleClass="header-label" text="Deposit / Withdraw">
@@ -55,13 +55,13 @@
 											<children>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../resources/images/user.png" />
+                                          <Image url="@../../../resources/images/icons/user.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets right="15.0" />
                                        </HBox.margin>
                                     </ImageView>
-												<Label styleClass="title-label" text="Client Username:" />
+												<Label styleClass="title-label" text="Username:" />
 											</children>
                                  <VBox.margin>
                                     <Insets left="20.0" />
@@ -69,7 +69,7 @@
 										</HBox>
 										<HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="60.0" prefWidth="200.0">
 											<children>
-												<TextField fx:id="UsernameField" editable="false" prefHeight="45.0" prefWidth="250.0" styleClass="gold-background">
+												<TextField fx:id="UsernameField" editable="false" prefHeight="45.0" prefWidth="250.0" styleClass="grey-background">
 													<HBox.margin>
 														<Insets />
 													</HBox.margin>
@@ -87,7 +87,7 @@
 											<children>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../resources/images/piggy-bank.png" />
+                                          <Image url="@../../../resources/images/icons/info.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets right="15.0" />
@@ -123,7 +123,7 @@
 											<children>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../resources/images/transaction.png" />
+                                          <Image url="@../../../resources/images/icons/info.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets right="15.0" />
@@ -155,7 +155,7 @@
 											<children>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../resources/images/balance.png" />
+                                          <Image url="@../../../resources/images/icons/balance.png" />
                                        </image>
                                        <HBox.margin>
                                           <Insets right="15.0" />
@@ -187,11 +187,11 @@
 				</VBox>
 				<HBox alignment="CENTER" prefHeight="110.0" prefWidth="200.0" styleClass="grey-background">
 					<children>
-						<Button fx:id="GoBackButton" mnemonicParsing="false" prefWidth="220.0" text="Back to Dashboard">
+						<Button fx:id="GoBackButton" mnemonicParsing="false" prefWidth="220.0" text="Back to Accounts">
 							<graphic>
 								<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
 									<image>
-										<Image url="@../../../resources/images/return.png" />
+										<Image url="@../../../resources/images/icons/return.png" />
 									</image>
 								</ImageView>
 							</graphic>
@@ -207,7 +207,7 @@
 							<graphic>
 								<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
 									<image>
-										<Image url="@../../../resources/images/check-mark.png" />
+										<Image url="@../../../resources/images/icons/check-mark.png" />
 									</image>
 								</ImageView>
 							</graphic>

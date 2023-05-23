@@ -22,7 +22,9 @@ public class AddUserController implements Initializable {
 	// User Attributes
 	public TextField FirstNameField;
 	public TextField LastNameField;
+	public TextField ImageField;
 	public ComboBox<String> UserTypeField;
+	public ComboBox<String> GenderField;
 	public PasswordField PasswordField;
 
 	// Utility Attributes
@@ -49,6 +51,7 @@ public class AddUserController implements Initializable {
 	// Initialize Frame Attributes
 	private void initializeFrame() {
 		UserTypeField.getItems().addAll("Admin", "Client");
+		GenderField.getItems().addAll("Male", "Female");
 	}
 
 	// Event: "Go Back" Button is Clicked
@@ -64,13 +67,15 @@ public class AddUserController implements Initializable {
 		String lastName = LastNameField.getText().trim();
 		String type = UserTypeField.getValue();
 		String password = PasswordField.getText().trim();
+		String imageURL = ImageField.getText().trim();
+		String gender = GenderField.getValue();
 
 		// Continue ONLY if Fields are NOT Empty
-		if (validateFields(firstName, lastName, type, password)) {
+		if (validateFields(firstName, lastName, type, password, imageURL, gender)) {
 			// Generate Attributes & Add New User
 			int ID = generateID();
 			String username = generateUsername(firstName, lastName);
-			User user = new User(ID, firstName, lastName, username, password, type);
+			User user = new User(ID, firstName, lastName, username, password, gender, imageURL, type);
 
 			// Attempt to Add New User to Database
 			boolean success = Model.getInstance().addNewUser(user);
@@ -83,7 +88,8 @@ public class AddUserController implements Initializable {
 	}
 
 	// Validate Fields
-	private boolean validateFields(String firstName, String lastName, String type, String password) {
+	private boolean validateFields(String firstName, String lastName, String type, String password, String imageURL,
+			String gender) {
 		// Initialize Flag
 		boolean success = true;
 
@@ -100,6 +106,12 @@ public class AddUserController implements Initializable {
 		} else if (password == null || password.isBlank()) {
 			success = false;
 			handleMessageLabel("Please Enter a Password!", false);
+		} else if (imageURL == null || imageURL.isBlank()) {
+			success = false;
+			handleMessageLabel("Please Enter an ImageURL!", false);
+		} else if (gender == null || gender.isBlank()) {
+			success = false;
+			handleMessageLabel("Please Select a Gender!", false);
 		}
 
 		// Return Flag

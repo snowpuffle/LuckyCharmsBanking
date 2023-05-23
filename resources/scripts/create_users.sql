@@ -7,6 +7,8 @@ CREATE TABLE Users (
     LastName VARCHAR(50) NOT NULL,
     UserName VARCHAR(255) NOT NULL,
     Type ENUM('CLIENT', 'ADMIN') NOT NULL,
+    Gender ENUM('MALE', 'FEMALE') NOT NULL,
+    ImageURL VARCHAR(255) NOT NULL,
     Password VARCHAR(255) NOT NULL
 );
 

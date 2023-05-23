@@ -134,6 +134,11 @@ public class Model {
 		return accountDAO.addAccount(account);
 	}
 
+	// Update User
+	public boolean updateUser(User user) {
+		return userDAO.updateUser(user);
+	}
+
 	// Update Account with New Balance
 	public boolean updateAccountBalance(Account account) {
 		return accountDAO.updateAccountBalance(account);
