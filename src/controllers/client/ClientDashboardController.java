@@ -81,6 +81,12 @@ public class ClientDashboardController implements Initializable {
 		Model.getInstance().getViewFactory().showChangePasswordFrame(client);
 	}
 
+	// Event: "Logout" Button is Clicked
+	private void handleLogout() {
+		closeCurrentWindow();
+		Model.getInstance().getViewFactory().showLoginFrame();
+	}
+
 	// Fix ImageURL Based on Gender
 	private String fixImage(String image, String gender) {
 		// Initialize Empty Location
@@ -102,12 +108,6 @@ public class ClientDashboardController implements Initializable {
 
 		// Return Image Location
 		return imageLocation;
-	}
-
-	// Event: "Logout" Button is Clicked
-	private void handleLogout() {
-		closeCurrentWindow();
-		Model.getInstance().getViewFactory().showLoginFrame();
 	}
 
 	// Generic: Close Current Window
