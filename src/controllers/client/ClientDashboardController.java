@@ -81,7 +81,7 @@ public class ClientDashboardController implements Initializable {
 		Model.getInstance().getViewFactory().showChangePasswordFrame(client);
 	}
 
-	// Fix ImageURL Based on Type
+	// Fix ImageURL Based on Gender
 	private String fixImage(String image, String gender) {
 		// Initialize Empty Location
 		String mainLocation = System.getProperty("user.dir") + "\\resources\\images";

@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" stylesheets="@../../../resources/stylesheets/main.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
@@ -58,13 +59,100 @@
                   <TableView fx:id="TableOfUsers" styleClass="light-green-background">
                     <columns>
                       <TableColumn fx:id="ColumnID" minWidth="20.0" prefWidth="75.0" style="-fx-alignment: center;" text="ID #" />
-                      <TableColumn fx:id="ColumnFirstName" minWidth="20.0" prefWidth="125.0" style="-fx-alignment: center;" text="First Name" />
-                        <TableColumn fx:id="ColumnLastName" minWidth="20.0" prefWidth="125.0" style="-fx-alignment: center;" text="Last Name" />
-                        <TableColumn fx:id="ColumnUsername" minWidth="20.0" prefWidth="100.0" style="-fx-alignment: center;" text="Username" />
-                        <TableColumn fx:id="ColumnGender" minWidth="20.0" prefWidth="100.0" style="-fx-alignment: center;" text="Gender" />
-                        <TableColumn fx:id="ColumnType" minWidth="20.0" prefWidth="125.0" style="-fx-alignment: center;" text="User Type" />
+                      <TableColumn fx:id="ColumnFirstName" minWidth="20.0" prefWidth="100.0" style="-fx-alignment: center;" text="First" />
+                        <TableColumn fx:id="ColumnLastName" minWidth="20.0" prefWidth="100.0" style="-fx-alignment: center;" text="Last" />
+                        <TableColumn fx:id="ColumnType" minWidth="20.0" prefWidth="150.0" style="-fx-alignment: center;" text="User Type" />
                     </columns>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
                   </TableView>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="gold-background" />
+                        <String fx:value="black-border" />
+                        <String fx:value="rounded-border" />
+                     </styleClass>
+                     <children>
+                        <Label fx:id="NameField" alignment="CENTER" prefHeight="25.0" prefWidth="250.0" styleClass="title-label" text="Joe Smith" />
+                        <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="75.0" text="User ID:" textAlignment="RIGHT">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="IDField" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="50.0" text="12345">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ImageView fx:id="ImageField" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/males/man-2.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="15.0" top="15.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="250.0">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                           <children>
+                              <Label prefWidth="105.0" text="Username:">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="UsernameField" prefWidth="150.0" text="joe_smith">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="250.0">
+                           <children>
+                              <Label prefWidth="105.0" text="Type:">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="TypeField" prefWidth="150.0" text="Client">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="250.0">
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                           <children>
+                              <Label prefWidth="105.0" text="Gender:">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="GenderField" prefWidth="150.0" text="Male">
+                                 <font>
+                                    <Font name="Pangolin Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
