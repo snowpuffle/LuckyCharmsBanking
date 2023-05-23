@@ -26,9 +26,9 @@ public class Model {
 		this.accountDAO = new AccountDAO(DBManager.getInstance().getConnection());
 
 		seedUsers();
-		// seedAccounts();
+		seedAccounts();
 		printAllUsers();
-		// printAllAccounts();
+		printAllAccounts();
 	}
 
 	// Get Database Instance
@@ -94,7 +94,7 @@ public class Model {
 
 	// Check Account Type
 	public Account checkAccountType(User user, String type, double balance) {
-		// Generate a Unique ID for the New Animal
+		// Generate a Unique ID for the New Account
 		int ID = generateID();
 		String accountNumber = generateAccountNumber();
 
@@ -116,7 +116,7 @@ public class Model {
 
 	// Add New Account
 	public boolean addNewAccount(User user, String type) throws SQLException {
-		// Generate a Unique ID for the New Animal
+		// Generate a Unique ID for the New Account
 		int ID = generateID();
 		String accountNumber = generateAccountNumber();
 		double balance = 10.0;
