@@ -25,7 +25,7 @@
       								<Insets right="15.0" />
       							</HBox.margin>
       							<image>
-      								<Image url="@../../../resources/images/rainbow.png" />
+      								<Image url="@../../../resources/images/icons/woman.png" />
       							</image>
       						</ImageView>
       						<Label styleClass="header-label" text="View All Users">
@@ -42,7 +42,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
                            <image>
-                              <Image url="@../../../resources/images/return.png" />
+                              <Image url="@../../../resources/images/icons/return.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -58,10 +58,11 @@
                   <TableView fx:id="TableOfUsers" styleClass="light-green-background">
                     <columns>
                       <TableColumn fx:id="ColumnID" minWidth="20.0" prefWidth="75.0" style="-fx-alignment: center;" text="ID #" />
-                      <TableColumn fx:id="ColumnFirstName" minWidth="20.0" prefWidth="150.0" style="-fx-alignment: center;" text="First Name" />
-                        <TableColumn fx:id="ColumnLastName" minWidth="20.0" prefWidth="150.0" style="-fx-alignment: center;" text="Last Name" />
-                        <TableColumn fx:id="ColumnUsername" minWidth="20.0" prefWidth="175.0" style="-fx-alignment: center;" text="Username" />
-                        <TableColumn fx:id="ColumnType" minWidth="20.0" prefWidth="150.0" style="-fx-alignment: center;" text="User Type" />
+                      <TableColumn fx:id="ColumnFirstName" minWidth="20.0" prefWidth="125.0" style="-fx-alignment: center;" text="First Name" />
+                        <TableColumn fx:id="ColumnLastName" minWidth="20.0" prefWidth="125.0" style="-fx-alignment: center;" text="Last Name" />
+                        <TableColumn fx:id="ColumnUsername" minWidth="20.0" prefWidth="100.0" style="-fx-alignment: center;" text="Username" />
+                        <TableColumn fx:id="ColumnGender" minWidth="20.0" prefWidth="100.0" style="-fx-alignment: center;" text="Gender" />
+                        <TableColumn fx:id="ColumnType" minWidth="20.0" prefWidth="125.0" style="-fx-alignment: center;" text="User Type" />
                     </columns>
                   </TableView>
                </children>

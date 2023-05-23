@@ -23,7 +23,7 @@
 								<Insets right="15.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../../resources/images/icons/new-page.png" />
+								<Image url="@../../../resources/images/icons/balloons.png" />
 							</image>
 						</ImageView>
 						<Label styleClass="header-label" text="Add New Account">

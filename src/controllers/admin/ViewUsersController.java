@@ -27,6 +27,7 @@ public class ViewUsersController implements Initializable {
 	public TableColumn<User, String> ColumnFirstName;
 	public TableColumn<User, String> ColumnLastName;
 	public TableColumn<User, String> ColumnType;
+	public TableColumn<User, String> ColumnGender;
 	public TableColumn<User, String> ColumnUsername;
 
 	// Utility Attributes
@@ -69,6 +70,7 @@ public class ViewUsersController implements Initializable {
 		ColumnLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
 		ColumnType.setCellValueFactory(new PropertyValueFactory<>("type"));
 		ColumnUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
+		ColumnGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
 	}
 
 	// Display User Data
@@ -78,7 +80,7 @@ public class ViewUsersController implements Initializable {
 			ObservableList<User> data = FXCollections.observableList(listOfUsers);
 			TableOfUsers.setItems(data);
 		} catch (Exception e) {
-
+			System.out.println("ERROR: Cannot Display User Data!");
 		}
 	}
 

@@ -22,7 +22,7 @@
 								<Insets right="15.0" />
 							</HBox.margin>
 							<image>
-								<Image url="@../../../resources/images/icons/coins.png" />
+								<Image url="@../../../resources/images/icons/leprechaun-green.png" />
 							</image>
 						</ImageView>
 						<Label styleClass="header-label" text="Edit Client Profile">

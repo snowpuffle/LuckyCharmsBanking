@@ -26,9 +26,9 @@ public class Model {
 		this.accountDAO = new AccountDAO(DBManager.getInstance().getConnection());
 
 		seedUsers();
-		seedAccounts();
+		// seedAccounts();
 		printAllUsers();
-		printAllAccounts();
+		// printAllAccounts();
 	}
 
 	// Get Database Instance

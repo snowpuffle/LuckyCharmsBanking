@@ -30,7 +30,7 @@ public class UserSeeds {
 
 		// Generate Admin and Clients
 		generateAdmin();
-		generateClients(3);
+		generateClients(20);
 	}
 
 	// Generate Random Clients
